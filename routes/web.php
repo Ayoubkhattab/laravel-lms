@@ -43,13 +43,17 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/admin/teacher', 'index')->name('all_teachers');
         Route::get('/admin/create/teacher', 'create')->name('create_teacher');
         Route::post('/admin/create/teacher', 'store')->name('store_teacher');
-
-//        Route::get('/admin/add/teacher', 'add_teacher')->name('add_teacher');
+        Route::get('/admin/edit/teacher/{id}', 'edit')->name('edit_teacher');
+        Route::put('/admin/edit/teacher/{id}', 'update_teacher')->name('update_teacher');
+        Route::delete('/admin/delete/teacher/{id}', 'delete_teacher')->name('delete_teacher');
     });
     Route::controller(StudentController::class)->group(function () {
         Route::get('/admin/students', 'index')->name('all_students');
         Route::get('/admin/add/student', 'create')->name('add_student');
         Route::post('/admin/add/student', 'store')->name('add_student');
+        Route::get('/admin/edit/student/{id}', 'edit')->name('edit_student');
+        Route::put('/admin/edit/student/{id}', 'update_student')->name('update_student');
+        Route::delete('/admin/delete/student/{id}', 'delete_student')->name('delete_student');
 
     });
     Route::controller(CourseController::class)->group(function () {

@@ -39,68 +39,17 @@ all teachers
             <td>{{$user->password}}</td>
 {{--            <td>{{$user->role}}</td>--}}
             <td>
-                      <a href="" class="btn btn-primary bx bx-edit-alt me-1 "> Edit</a >
-                      <a href="" class="btn btn-danger bx bx-trash me-1 "> Delete</a    >
+                      <a href="{{route('edit_teacher', $user->id)}}" class="btn btn-primary bx bx-edit-alt me-1  "> Edit</a >
+
+                        {{-- <a href="{{route('delete_teacher', $user->id)}}" class="btn btn-danger bx bx-edit-alt me-1  "> delete</a > --}}
+
+                        <form id="delete-form" action="{{route('delete_teacher' , $user->id)}}" method="post">
+                          @method('DELETE')
+                          @csrf
+                          <button class="btn btn-danger bx bx-trash me-1"> delete</button>
+                          </form> 
               </td>
           </tr>
   @endforeach
 
-
-
-{{--    <!-- Responsive Table -->--}}
-{{--    <div class="card">--}}
-{{--        <h5 class="card-header">Teachers Table</h5>--}}
-{{--        <div class="table-responsive text-nowrap">--}}
-{{--          <table class="table">--}}
-{{--            <thead>--}}
-{{--              <tr class="text-nowrap">--}}
-{{--                <th>#</th>--}}
-{{--                <th>name</th>--}}
-{{--                <th>email</th>--}}
-{{--                <th>pasword</th>--}}
-{{--                <th>status</th>--}}
-{{--                <th>options</th>--}}
-
-{{--              --}}
-{{--              </tr>--}}
-{{--            </thead>--}}
-{{--            <tbody>--}}
-{{--              <tr>--}}
-{{--                <th scope="row">1</th>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>--}}
-{{--                          <a href="" class="btn btn-primary bx bx-edit-alt me-1 "> Edit</a >--}}
-{{--                          <a href="" class="btn btn-danger bx bx-trash me-1 "> Delete</a    >--}}
-{{--                  </td>--}}
-{{--              </tr>--}}
-{{--              <tr>--}}
-{{--                <th scope="row">2</th>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>--}}
-{{--                    <a href="" class="btn btn-primary bx bx-edit-alt me-1 "> Edit</a >--}}
-{{--                    <a href="" class="btn btn-danger bx bx-trash me-1 "> Delete</a    >--}}
-{{--            </td>--}}
-{{--              </tr>--}}
-{{--              <tr>--}}
-{{--                <th scope="row">3</th>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>Table cell</td>--}}
-{{--                <td>--}}
-{{--                    <a href="" class="btn btn-primary bx bx-edit-alt me-1 "> Edit</a >--}}
-{{--                    <a href="" class="btn btn-danger bx bx-trash me-1 "> Delete</a    >--}}
-{{--            </td>--}}
-{{--              </tr>--}}
-{{--            </tbody>--}}
-{{--          </table>--}}
-{{--        </div>--}}
-{{--      </div>--}}
-{{--      <!--/ Responsive Table -->--}}
 @endsection

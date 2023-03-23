@@ -12,7 +12,7 @@ class TeacherController extends Controller
 {
     public function index()
     {
-//        $users = User::all();
+        //        $users = User::all();
 //        $users = DB::table('role_user')
 //            ->where('role_id', '=',2)
 //            ->get();
@@ -22,7 +22,7 @@ class TeacherController extends Controller
             ->select('users.*')
             ->where('role_id', '2')
             ->get();
-//        dd($users);
+        //        dd($users);
 //        foreach($users as $user) {
 //            echo $user->name . '<br>';
 //            echo $user->email . '<br>';
@@ -35,7 +35,7 @@ class TeacherController extends Controller
     {
         return view('admin.add_teacher');
     }
-// add teacher
+    // add teacher
     public function store(Request $request)
     {
         $newteacher = User::create([
@@ -50,11 +50,42 @@ class TeacherController extends Controller
         return redirect('/admin/teacher');
     }
 
-//    public function add_teacher()
+    //    public function add_teacher()
 //    {
 //        $rols = '2';
 //        return view('admin.add_teacher', compact('rols'));
 //    }
+
+
+
+    public function edit($id)
+    {
+        $teacher = User::findorfail($id);
+        return view('admin.teacher_edit', compact('teacher'));
+    }
+
+
+    public function update_teacher(Request $request, $id)
+    {
+        $teacher = User::findorfail($id);
+        $teacher->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+
+        // dd($teacher);
+
+        return redirect()->route('all_teachers');
+    }
+
+
+    public function delete_teacher($id)
+    {
+        User::findorfail($id)->delete();
+        return redirect()->route('all_teachers');
+    }
+
 
 
 }

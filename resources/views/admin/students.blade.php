@@ -39,9 +39,13 @@ all student
                         <td>{{$user->password}}</td>
                         {{--            <td>{{$user->role}}</td>--}}
                         <td>
-                            <a href="" class="btn btn-primary bx bx-edit-alt me-1 "> Edit</a >
-                            <a href="" class="btn btn-danger bx bx-trash me-1 "> Delete</a    >
-                        </td>
+                            <a href="{{route('edit_student', $user->id)}}" class="btn btn-primary bx bx-edit-alt me-1 "> Edit</a >
+                                <form id="delete-form" action="{{route('delete_student' , $user->id)}}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="btn btn-danger bx bx-trash me-1"> delete</button>
+                                    </form>                     
+                                   </td>
                     </tr>
             @endforeach
 
