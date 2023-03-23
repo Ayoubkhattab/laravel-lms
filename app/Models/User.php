@@ -14,6 +14,13 @@ class User extends Authenticatable
     use LaratrustUserTrait;
     use HasApiTokens, HasFactory, Notifiable;
 
+//    const student = 'student';
+//    const teacher = 'teacher';
+//    const admin = 'admin';
+
+
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -43,4 +50,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+//    public function getUserRole()
+//    {
+//        switch ($this->role) {
+//            case 2:
+//                return 'admin';
+//            case 1:
+//                return 'teacher';
+//            case 0:
+//                return 'student';
+//            default:
+//                return null;
+//        }
+//    }
+
+
 }
