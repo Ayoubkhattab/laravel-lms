@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TeacherController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,15 +19,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('index');
+//});
 
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/home', 'home')->name('Home');
+});
 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'role:user'])->name('dashboard');
 
 // ------------------------- admin --------------------------------
 
@@ -34,10 +39,6 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/admin/dashboard', 'index')->name('admindashboard');
-        // Route::get('/admin/teacher', 'show')->name('showtecher');
-        // Route::get('/admin/test', 'create')->name('create_teacher');
-        // Route::post('/admin/test', 'store')->name('store_teacher');
-
     });
     Route::controller(TeacherController::class)->group(function () {
         Route::get('/admin/teacher', 'index')->name('all_teachers');
@@ -56,9 +57,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::delete('/admin/delete/student/{id}', 'delete_student')->name('delete_student');
 
     });
-    Route::controller(CourseController::class)->group(function () {
-        Route::get('/admin/courses', 'index')->name('show_courses');
-    });
+    //    Route::controller(CourseController::class)->group(function () {
+//        Route::get('/admin/courses', 'index')->name('show_courses');
+//    });
 });
 
 

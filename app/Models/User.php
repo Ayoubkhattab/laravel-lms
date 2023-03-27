@@ -52,19 +52,11 @@ class User extends Authenticatable
     ];
 
 
-//    public function getUserRole()
-//    {
-//        switch ($this->role) {
-//            case 2:
-//                return 'admin';
-//            case 1:
-//                return 'teacher';
-//            case 0:
-//                return 'student';
-//            default:
-//                return null;
-//        }
-//    }
 
+
+    public function roles(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Role::class,'role_user');
+    }
 
 }

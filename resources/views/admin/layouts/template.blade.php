@@ -6,7 +6,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="{{asset('dashboard/assets/')}}"
+  data-assets-path="{{asset('admin_dashboard/assets/')}}"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -20,7 +20,7 @@
 
     <meta name="description" content="" />
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{asset('dashboard/assets/img/favicon/favicon.ico')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('admin_dashboard/assets/img/favicon/favicon.ico')}}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,26 +31,26 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="{{asset('dashboard/assets/vendor/fonts/boxicons.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin_dashboard/assets/vendor/fonts/boxicons.css')}}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{{asset('dashboard/assets/vendor/css/core.css')}}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{asset('dashboard/assets/vendor/css/theme-default.css')}}" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="{{asset('dashboard/assets/css/demo.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin_dashboard/assets/vendor/css/core.css')}}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{asset('admin_dashboard/assets/vendor/css/theme-default.css')}}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{asset('admin_dashboard/assets/css/demo.css')}}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{asset('dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin_dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" />
 
-    <link rel="stylesheet" href="{{asset('dashboard/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin_dashboard/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="{{asset('dashboard/assets/vendor/js/helpers.js')}}"></script>
+    <script src="{{asset('admin_dashboard/assets/vendor/js/helpers.js')}}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="{{asset('dashboard/assets/js/config.js')}}"></script>
+    <script src="{{asset('admin_dashboard/assets/js/config.js')}}"></script>
   </head>
 
   <body>
@@ -137,7 +137,7 @@
             </li>
 
             <!-- Layouts -->
-           
+
             {{-- manage teacher --}}
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">manage teachers</span>
@@ -147,7 +147,7 @@
                   <i class="menu-icon tf-icons bx bx-home-circle"></i>
                   <div data-i18n="Analytics">all teachers</div>
                 </a>
-              </li> 
+              </li>
               <li class="menu-item active">
                 <a href="{{route('create_teacher')}}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -163,7 +163,7 @@
                     <i class="menu-icon tf-icons bx bx-home-circle"></i>
                     <div data-i18n="Analytics">all students</div>
                   </a>
-                </li> 
+                </li>
                 <li class="menu-item active">
                   <a href="{{route('add_student')}}" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -205,80 +205,80 @@
               </div>
               <!-- /Search -->
 
-              <ul class="navbar-nav flex-row align-items-center ms-auto">
-                <!-- Place this tag where you want the button to render. -->
-                <li class="nav-item lh-1 me-3">
-                  <a
-                    class="github-button"
-                    href="https://github.com/themeselection/sneat-html-admin-template-free"
-                    data-icon="octicon-star"
-                    data-size="large"
-                    data-show-count="true"
-                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Star</a
-                  >
-                </li>
+{{--              <ul class="navbar-nav flex-row align-items-center ms-auto">--}}
+{{--                <!-- Place this tag where you want the button to render. -->--}}
+{{--                <li class="nav-item lh-1 me-3">--}}
+{{--                  <a--}}
+{{--                    class="github-button"--}}
+{{--                    href="https://github.com/themeselection/sneat-html-admin-template-free"--}}
+{{--                    data-icon="octicon-star"--}}
+{{--                    data-size="large"--}}
+{{--                    data-show-count="true"--}}
+{{--                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"--}}
+{{--                    >Star</a--}}
+{{--                  >--}}
+{{--                </li>--}}
 
                 <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
-                      <img src="{{asset('dashboard/assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />
-                    </div>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-3">
-                            <div class="avatar avatar-online">
-                              <img src="{{asset('dashboard/assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />
-                            </div>
-                          </div>
-                          <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
-                            <small class="text-muted">Admin</small>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-cog me-2"></i>
-                        <span class="align-middle">Settings</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
-                        <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <!--/ User -->
-              </ul>
+{{--                <li class="nav-item navbar-dropdown dropdown-user dropdown">--}}
+{{--                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">--}}
+{{--                    <div class="avatar avatar-online">--}}
+{{--                      <img src="{{asset('admin_dashboard/assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />--}}
+{{--                    </div>--}}
+{{--                  </a>--}}
+{{--                  <ul class="dropdown-menu dropdown-menu-end">--}}
+{{--                    <li>--}}
+{{--                      <a class="dropdown-item" href="#">--}}
+{{--                        <div class="d-flex">--}}
+{{--                          <div class="flex-shrink-0 me-3">--}}
+{{--                            <div class="avatar avatar-online">--}}
+{{--                              <img src="{{asset('admin_dashboard/assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />--}}
+{{--                            </div>--}}
+{{--                          </div>--}}
+{{--                          <div class="flex-grow-1">--}}
+{{--                            <span class="fw-semibold d-block">John Doe</span>--}}
+{{--                            <small class="text-muted">Admin</small>--}}
+{{--                          </div>--}}
+{{--                        </div>--}}
+{{--                      </a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                      <div class="dropdown-divider"></div>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                      <a class="dropdown-item" href="#">--}}
+{{--                        <i class="bx bx-user me-2"></i>--}}
+{{--                        <span class="align-middle">My Profile</span>--}}
+{{--                      </a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                      <a class="dropdown-item" href="#">--}}
+{{--                        <i class="bx bx-cog me-2"></i>--}}
+{{--                        <span class="align-middle">Settings</span>--}}
+{{--                      </a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                      <a class="dropdown-item" href="#">--}}
+{{--                        <span class="d-flex align-items-center align-middle">--}}
+{{--                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>--}}
+{{--                          <span class="flex-grow-1 align-middle">Billing</span>--}}
+{{--                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>--}}
+{{--                        </span>--}}
+{{--                      </a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                      <div class="dropdown-divider"></div>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                      <a class="dropdown-item" href="auth-login-basic.html">--}}
+{{--                        <i class="bx bx-power-off me-2"></i>--}}
+{{--                        <span class="align-middle">Log Out</span>--}}
+{{--                      </a>--}}
+{{--                    </li>--}}
+{{--                  </ul>--}}
+{{--                </li>--}}
+{{--                <!--/ User -->--}}
+{{--              </ul>--}}
             </div>
           </nav>
 
@@ -298,33 +298,24 @@
     </div>
     <!-- / Layout wrapper -->
 
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
-
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="{{asset('dashboard/assets/vendor/libs/jquery/jquery.js')}}"></script>
-    <script src="{{asset('dashboard/assets/vendor/libs/popper/popper.js')}}"></script>
-    <script src="{{asset('dashboard/assets/vendor/js/bootstrap.js')}}"></script>
-    <script src="{{asset('dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+    <script src="{{asset('admin_dashboard/assets/vendor/libs/jquery/jquery.js')}}"></script>
+    <script src="{{asset('admin_dashboard/assets/vendor/libs/popper/popper.js')}}"></script>
+    <script src="{{asset('admin_dashboard/assets/vendor/js/bootstrap.js')}}"></script>
+    <script src="{{asset('admin_dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
 
-    <script src="{{asset('dashboard/assets/vendor/js/menu.js')}}"></script>
+    <script src="{{asset('admin_dashboard/assets/vendor/js/menu.js')}}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="{{asset('dashboard/assets/vendor/libs/apex-charts/apexcharts.js')}}"></script>
+    <script src="{{asset('admin_dashboard/assets/vendor/libs/apex-charts/apexcharts.js')}}"></script>
 
     <!-- Main JS -->
-    <script src="{{asset('dashboard/assets/js/main.js')}}"></script>
+    <script src="{{asset('admin_dashboard/assets/js/main.js')}}"></script>
 
     <!-- Page JS -->
-    <script src="{{asset('dashboard/assets/js/dashboards-analytics.js')}}"></script>
+    <script src="{{asset('admin_dashboard/assets/js/dashboards-analytics.js')}}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
