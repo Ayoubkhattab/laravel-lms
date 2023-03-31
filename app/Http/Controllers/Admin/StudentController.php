@@ -18,7 +18,7 @@ class StudentController extends Controller
             ->select('users.*')
             ->where('role_id', '3')
             ->get();
-        //        dd($users);
+//                dd($users);
 //        foreach($users as $user) {
 //            echo $user->name . '<br>';
 //            echo $user->email . '<br>';
@@ -27,14 +27,6 @@ class StudentController extends Controller
         return view('admin.students', compact('users'));
     }
 
-
-
-
-    //    public function index()
-//    {
-//
-//        return view('admin.students');
-//    }
 
     public function create()
     {

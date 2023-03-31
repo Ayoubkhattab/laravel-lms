@@ -22,7 +22,7 @@ class TeacherController extends Controller
             ->select('users.*')
             ->where('role_id', '2')
             ->get();
-        //        dd($users);
+//                dd($users);
 //        foreach($users as $user) {
 //            echo $user->name . '<br>';
 //            echo $user->email . '<br>';

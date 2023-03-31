@@ -20,14 +20,14 @@ add student
           <div class="card-body">
             <form action="" method="POST">
                 @csrf
-                {{-- name --}}
+                 name
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
                 <div class="col-sm-10">
                   <input type="text" name="name" class="form-control" id="basic-default-name" placeholder="name teacher" />
                 </div>
               </div>
-             {{-- email --}}
+              email
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-email">Email</label>
                 <div class="col-sm-10">
@@ -47,7 +47,7 @@ add student
                 </div>
               </div>
 
-              {{-- pass --}}
+               pass
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-company">Password</label>
                 <div class="col-sm-10">

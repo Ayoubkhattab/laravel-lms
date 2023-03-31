@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TeacherController;
@@ -31,7 +31,7 @@ Route::controller(HomeController::class)->group(function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'role:user'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 // ------------------------- admin --------------------------------
 
@@ -57,6 +57,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::delete('/admin/delete/student/{id}', 'delete_student')->name('delete_student');
 
     });
+
     //    Route::controller(CourseController::class)->group(function () {
 //        Route::get('/admin/courses', 'index')->name('show_courses');
 //    });
@@ -74,5 +75,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+
+Route::controller(CourseController::class)->group(function (){
+    Route::get('course/{id}' , 'show')->name('show_course');
+});
+
+
+
+
 
 require __DIR__ . '/auth.php';

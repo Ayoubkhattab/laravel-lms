@@ -9,8 +9,8 @@ class Role extends LaratrustRole
     public $guarded = [];
 
 
-    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class ,'role_user');
     }
 }

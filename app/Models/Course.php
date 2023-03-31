@@ -12,8 +12,14 @@ class Course extends Model
 
     protected $fillable = [
         'name',
-        'descreption',
+        'description',
         'img'
     ];
+    public function user(){
+        return $this->belongsToMany('App\Models\User','course_users','user_id','course_id');
+    }
 
+    public  function student(){
+        return $this->belongsToMany(User::class , 'users_course');
+    }
 }
