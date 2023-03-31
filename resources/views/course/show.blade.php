@@ -2,5 +2,6 @@
 
 @section('content')
 
+    show courses
 
 @endsection
