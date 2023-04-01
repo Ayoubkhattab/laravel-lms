@@ -25,7 +25,12 @@ add teachers
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
                 <div class="col-sm-10">
-                  <input type="text" name="name" class="form-control" id="basic-default-name" placeholder="name teacher" />
+                  <input type="text"
+                         name="name"
+                         class="form-control"
+                         id="basic-default-name"
+                         placeholder="name teacher"
+                         required/>
                 </div>
               </div>
              {{-- email --}}
@@ -41,6 +46,7 @@ add teachers
                       placeholder="john.doe"
                       aria-label="john.doe"
                       aria-describedby="basic-default-email2"
+                    required
                     />
                     <span class="input-group-text" id="basic-default-email2">@example.com</span>
                   </div>
@@ -58,6 +64,7 @@ add teachers
                     class="form-control"
                     id="basic-default-company"
                     placeholder="enter password"
+                  required
                   />
                 </div>
               </div>

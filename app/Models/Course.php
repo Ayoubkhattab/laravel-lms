@@ -13,7 +13,7 @@ class Course extends Model
     protected $fillable = [
         'name',
         'description',
-        'img'
+        'image'
     ];
     public function user(){
         return $this->belongsToMany('App\Models\User','course_users','user_id','course_id');

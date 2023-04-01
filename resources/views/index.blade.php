@@ -22,7 +22,7 @@
             <div class="row ">
                 @foreach($courses as $course)
                     <div class="card" style="margin-right: 20px; margin-bottom: 20px; width: calc(25% - 20px);">
-                        <img src="{{$course->img}}" class="card-img-top d-block w-100" alt="...">
+                        <img src="{{$course->image}}" class="card-img-top d-block w-100" alt="...">
                         <div class="card-body p-3">
                             <h1 class="card-title text-center" style="font-weight:bold ; font-size: large ">{{$course->name}}</h1>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

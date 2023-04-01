@@ -20,7 +20,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+       return view('course.create');
     }
 
     /**
@@ -28,8 +28,34 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the form data
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $course = new Course;
+
+        $course->name = $request->name;
+        $course->description = $request->description;
+        $course->teacher = $request->teacher;
+
+        // upload the image
+        $image = $request->file('image');
+        $image_name = time() . '_' . $image->getClientOriginalName();
+        $image->move(public_path('public/images/courses'), $image_name);
+
+        $course->image = $image_name;
+
+
+        $course->save();
+
+        return redirect()->route('show_course', $course->id);
     }
+
+
+
 
     /**
      * Display the specified resource.

@@ -77,11 +77,14 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
+Route::middleware(['auth' , 'role:teacher'])->group(function (){
 Route::controller(CourseController::class)->group(function (){
     Route::get('course/{id}' , 'show')->name('show_course');
-});
+    Route::get('create/course', 'create')->name('create_course');
+    Route::post('create/course', 'store')->name('add_course');
 
+});
+});
 
 
 
